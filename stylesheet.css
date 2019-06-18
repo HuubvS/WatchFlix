@@ -1,0 +1,217 @@
+.main_block {
+  background-image: url("image/login_bg_dark.png");
+  width: 100vw;
+  height: 1000px;
+  padding: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.left_block {
+  width: 50%;
+  height: 900px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+.right_block {
+  width: 50%;
+  height: 900px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+.left_content {
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+}
+.right_content {
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+}
+.posters {
+  width: 100%;
+  height: 60%;
+  float: left;
+  position: relative;
+}
+.informations {
+  width: 100%;
+  height: 40%;
+  float: left;
+  position: relative;
+}
+.logo {
+  width: 100%;
+  height: 35%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_group {
+  width: 100%;
+  height: 65%;
+  float: left;
+}
+
+.poster1,
+.poster2,
+.poster3,
+.poster4,
+.poster5 {
+  background-size: cover;
+}
+.poster1 {
+  width: 320px;
+  height: 480px;
+  background-color: indigo;
+  right: 50px;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  background-image: url("image/movie5.jpg");
+}
+
+.poster2 {
+  width: 270px;
+  height: 430px;
+  background-color: rebeccapurple;
+  right: 160px;
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  background-image: url("image/movie4.jpg");
+}
+
+.poster3 {
+  width: 220px;
+  height: 380px;
+  background-color: peru;
+  right: 270px;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  background-image: url("image/movie3.jpg");
+}
+
+.poster4 {
+  width: 170px;
+  height: 330px;
+  background-color: coral;
+  right: 380px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  background-image: url("image/movie2.jpg");
+}
+
+.poster5 {
+  width: 120px;
+  height: 280px;
+  background-color: chartreuse;
+  right: 490px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background-image: url("image/movie1.jpeg");
+}
+
+.info_text {
+  text-align: right;
+  font-size: 20pt;
+  position: absolute;
+  right: 50px;
+  color: white;
+  font-family: "Segoe UI Light", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register_text {
+  color: #1e90ff;
+}
+
+.username,
+.password,
+.signin_apple,
+.signin {
+  width: 320px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.signin {
+  background-color: #1e90ff;
+  text-align: center;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin_apple {
+  text-align: center;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin_text {
+  vertical-align: middle;
+  color: white;
+  margin: 0 auto;
+  font-size: 15pt;
+}
+
+.signin_apple_text {
+  vertical-align: middle;
+  color: black;
+  margin: 0 auto;
+  font-size: 15pt;
+}
+
+.logo_text {
+  width: 380px;
+  height: 200px;
+  background-image: url(image/logo.png);
+  background-size: cover;
+  margin: 0 auto;
+}
+.image {
+  width: 256px;
+  height: 50px;
+  position: absolute;
+  right: 50px;
+  bottom: 100px;
+  background-image: url(image/logo_under.png);
+  background-size: cover;
+}
+
+.username,
+.password {
+  text-align: center;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uspass {
+  vertical-align: middle;
+  color: grey;
+  margin: 0 auto;
+  font-size: 15pt;
+}
