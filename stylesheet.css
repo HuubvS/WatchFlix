@@ -178,7 +178,8 @@
 .signin_apple_text {
   vertical-align: middle;
   color: black;
-  margin: 0 auto;
+  margin-right: 50px;
+  margin-left: 10px;
   font-size: 15pt;
 }
 
@@ -202,8 +203,7 @@
 .username,
 .password {
   text-align: center;
-
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,4 +214,8 @@
   color: grey;
   margin: 0 auto;
   font-size: 15pt;
+}
+
+.applelogo {
+  margin-left: 50px;
 }
