@@ -17,11 +17,31 @@
       <div class="left_block">
         <div class="left_content">
           <div class="posters">
-            <div id="poster1" class="poster1"></div>
-            <div id="poster2" class="poster2"></div>
-            <div id="poster3" class="poster3"></div>
-            <div id="poster4" class="poster4"></div>
-            <div id="poster5" class="poster5"></div>
+            <div id="poster1" class="poster1">
+              <div id="nowPlayingPoster1" class="nowPlaying">
+                <span>Now Playing</span>
+              </div>
+            </div>
+            <div id="poster2" class="poster2">
+              <div id="nowPlayingPoster2" class="nowPlaying">
+                <span>Now Playing</span>
+              </div>
+            </div>
+            <div id="poster3" class="poster3">
+              <div id="nowPlayingPoster3" class="nowPlaying">
+                <span>Now Playing</span>
+              </div>
+            </div>
+            <div id="poster4" class="poster4">
+              <div id="nowPlayingPoster4" class="nowPlaying">
+                <span>Now Playing</span>
+              </div>
+            </div>
+            <div id="poster5" class="poster5">
+              <div id="nowPlayingPoster5" class="nowPlaying">
+                <span>Now Playing</span>
+              </div>
+            </div>
           </div>
           <div class="informations">
             <p class="info_text">
@@ -36,7 +56,7 @@
         </div>
       </div>
       <div class="right_block">
-        <div class="right_content">
+        <div class="right_content" id="loginContent">
           <div class="logo">
             <div class="logo_text"></div>
           </div>
@@ -51,6 +71,9 @@
                 <span class="signin_text">Sign in with e-mail</span>
               </a>
           </div>
+        </div>
+        <div class="right_content" id="videoContent" style="display: none">
+            <iframe id="video" width="100%" height="480" src="#" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
