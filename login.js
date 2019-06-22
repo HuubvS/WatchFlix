@@ -22,6 +22,10 @@ $(document).ready(function(){
     var poster3Clicked = false;
     var poster4Clicked = false;
     var poster5Clicked = false;
+    var signIn = $('#signin_btn');
+    var user = $('#usname');
+    var pass = $('#uspass');
+    var errorText = $('#loginErrorText');
 
     poster1.on("click", function(){
         nowPlayingPoster1.show();
@@ -47,6 +51,9 @@ $(document).ready(function(){
         nowPlayingPoster5.show();
         poster5Clicked = true;
         posterClicked(5);
+    });
+    signIn.on("click", function(){
+        signInClicked();
     });
 
     poster1.mouseenter(function(){
@@ -153,4 +160,50 @@ $(document).ready(function(){
             poster5Clicked = false;
         }
     });
+
+    signInClicked = function(){
+        errorText.html("");
+        errorText.hide();
+        user.css("border-color","white");
+        pass.css("border-color","white");
+
+        if(user.val().length <= 0){
+            user.css("border-color","red");
+            errorText.html("Please fill in your Username!");
+            errorText.show();
+            return;
+        }
+
+        if(pass.val().length <= 0){
+            pass.css("border-color","red");
+            errorText.html("Please fill in your Password!");
+            errorText.show();
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: 'login.php',
+            data: {
+                username: user.val(),
+                password: pass.val()
+            },
+            success: function(response)
+            {
+                if(response.length > 0){
+                    window.location.replace("User_Page.html");
+                }  
+                else{
+                    user.css("border-color","red");
+                    pass.css("border-color","red");
+                    errorText.html("Wrong Username or Password!");
+                    errorText.show();
+                }
+            },
+            error: function(response){
+                console.log("error!");
+                console.log(response);
+            }
+       });
+    };
 });

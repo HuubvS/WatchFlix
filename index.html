@@ -61,15 +61,17 @@
             <div class="logo_text"></div>
           </div>
           <div class="login_group">
-              <input type="text" class="username" placeholder="Username" id="usname" name="usname">
-              <input type="password" class="password" placeholder="Password" id="uspass" name="uspass">
+              <input type="text" class="loginField username" placeholder="Username" id="usname" name="usname">
+              <input type="password" class="loginField password" placeholder="Password" id="uspass" name="uspass">
               <a href="User_Page.html" class="signin_apple">
                 <img src="image/apple_logo.png" alt="apple login sign" width="20" class="applelogo">
                 <span class="signin_apple_text">Sign in with Apple</span>
               </a>
-              <a href="User_Page.html" class="signin">
+              <!-- href="User_Page.html" -->
+              <a class="signin" id="signin_btn">
                 <span class="signin_text">Sign in with e-mail</span>
               </a>
+              <label id="loginErrorText" class="loginField error" style="display: none"></label>
           </div>
         </div>
         <div class="right_content" id="videoContent" style="display: none">
