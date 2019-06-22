@@ -209,14 +209,17 @@ a {
   background-size: cover;
 }
 
-.username,
-.password {
+.loginField{
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+}
+
+.username,
+.password{
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   font-size: 15pt;
 }
 
@@ -246,4 +249,9 @@ a {
   line-height: normal;
   font-size: 20pt;
   color: white;
+}
+
+.error{
+  margin-top: 0.5em; 
+  color: red;
 }
