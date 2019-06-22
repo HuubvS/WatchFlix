@@ -1,0 +1,75 @@
+.main_block {
+  background-image: url("image/login_bg_dark.png");
+  width: 100vw;
+  height: 1000px;
+  padding: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo_text {
+  width: 235px;
+  height: 115px;
+  background-image: url(image/logo.png);
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.login_container {
+  text-align: center;
+  height: 150px;
+}
+
+.User {
+  display: inline-block;
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.User_A {
+  background-color: rgba(230, 10, 120, 0.425);
+}
+
+.User_B {
+  background-color: brown;
+}
+
+.User_C {
+  background-color: white;
+}
+
+.User_D {
+  background-color: pink;
+}
+
+.User_E {
+  background-color: aqua;
+}
+
+.Name {
+  display: inline-block;
+  background-color: white;
+}
+
+.replace_this {
+  background-color: red;
+}
+
+.kidsflix_container {
+  text-align: center;
+}
+.group {
+  display: inline-block;
+  width: 65px;
+  height: 100px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
