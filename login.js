@@ -26,6 +26,7 @@ $(document).ready(function(){
     var user = $('#usname');
     var pass = $('#uspass');
     var errorText = $('#loginErrorText');
+    var body = $('body');
 
     poster1.on("click", function(){
         nowPlayingPoster1.show();
@@ -54,6 +55,11 @@ $(document).ready(function(){
     });
     signIn.on("click", function(){
         signInClicked();
+    });
+    pass.on("keyup", function(e){
+        if (e.keyCode == 13) {
+            signInClicked();
+        }
     });
 
     poster1.mouseenter(function(){
@@ -162,25 +168,28 @@ $(document).ready(function(){
     });
 
     signInClicked = function(){
+        body.addClass("loading");
         errorText.html("");
         errorText.hide();
         user.css("border-color","white");
         pass.css("border-color","white");
-
+    
         if(user.val().length <= 0){
+            body.removeClass("loading");
             user.css("border-color","red");
             errorText.html("Please fill in your Username!");
             errorText.show();
             return;
         }
-
+    
         if(pass.val().length <= 0){
+            body.removeClass("loading");
             pass.css("border-color","red");
             errorText.html("Please fill in your Password!");
             errorText.show();
             return;
         }
-
+    
         $.ajax({
             type: "POST",
             url: 'login.php',
@@ -190,6 +199,7 @@ $(document).ready(function(){
             },
             success: function(response)
             {
+                body.removeClass("loading");
                 if(response.length > 0){
                     window.location.replace("User_Page.html");
                 }  
@@ -201,9 +211,34 @@ $(document).ready(function(){
                 }
             },
             error: function(response){
+                body.removeClass("loading");
                 console.log("error!");
                 console.log(response);
             }
        });
     };
 });
+
+CheckUser = function(){
+    $.ajax({
+        type: "POST",
+        url: 'login.php',
+        data: {
+            checkUser : 'true'
+        },
+        success: function(response)
+        {
+            console.log(response);
+            if(response.length > 0){
+                if(response === 'true')
+                    window.location.replace("User_Page.html");
+            }
+        },
+        error: function(response){
+            console.log("error!");
+            console.log(response);
+        }
+   });
+};
+
+CheckUser();
