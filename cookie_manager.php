@@ -2,10 +2,13 @@
 
 $USER = "User";
 
-function SetUser($userId){
+function SetUser($userId, $userGroupId){
     global $USER;
-    if(isset($userId)){
-        setcookie($USER, $userId);
+    
+    if(isset($userId) && isset($userGroupId)){
+        $user_content -> userId = $userId;
+        $user_content -> userGroupId = $userGroupId;
+        setcookie($USER, base64_encode(json_encode($user_content)));
     }
 }
 
@@ -16,15 +19,6 @@ function DeleteUser(){
     }
 }
 
-function GetUser(){
-    global $USER;
-    if(CheckUser() === 'true'){ 
-        return $_COOKIE[$USER];
-    } else {
-        return "User not exist";
-    }
-}
-
 function CheckUser(){
     global $USER;
     if(isset($_COOKIE[$USER])){ 
@@ -32,6 +26,37 @@ function CheckUser(){
     } else {
         return 'false';
     }
+}
+
+function GetUser(){
+    global $USER;
+    if(CheckUser() === 'true'){ 
+        return base64_decode($_COOKIE[$USER]);
+    } else {
+        return "User not exist";
+    }
+}
+
+function GetUserId(){
+    $user_content = GetUser();
+    if (strpos($user_content, 'User not exist') !== true){
+        $user_content = json_decode($user_content);
+        if(isset($user_content->userId)){
+            return $user_content->userId;
+        }
+    }
+    return "User not exist";
+}
+
+function GetUserGroupId(){
+    $user_content = GetUser();
+    if (strpos($user_content, 'User not exist') !== true){
+        $user_content = json_decode($user_content);
+        if(isset($user_content->userGroupId)){
+            return $user_content->userGroupId;
+        }
+    }
+    return "User not exist";
 }
 
 ?>

@@ -16,14 +16,16 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     try {
         $conn = OpenCon();
     
-        $call = $conn->prepare('CALL UserLogin(?, ?, @userId)');
+        $call = $conn->prepare('CALL UserLogin(?, ?, @userId, @userGroupId)');
         $call->bind_param('ss', $_POST['username'], $pass);
         $call->execute();
 
-        $select = $conn->query('SELECT @userId') ;
+        $select = $conn->query('SELECT @userId, @userGroupId') ;
         $result = $select->fetch_assoc() or die($conn->error);
+
         $userId = $result['@userId'];
-        SetUser($userId);
+        $userGroupId = $result['@userGroupId'];
+        SetUser($userId, $userGroupId);
         echo $userId;
 
         CloseCon($conn);

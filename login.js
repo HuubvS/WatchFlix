@@ -98,6 +98,10 @@ $(document).ready(function(){
             poster5.css("z-index", indexPoster5);
     });
 
+    signIn.mouseenter(function(){
+        signIn.css('cursor','pointer');
+    });
+
     posterClicked = function(id){
         var videoLink = "";
         if (id === 1)
