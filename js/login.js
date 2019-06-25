@@ -205,7 +205,7 @@ $(document).ready(function(){
             {
                 body.removeClass("loading");
                 if(response.length > 0){
-                    window.location.replace("User_Page.html");
+                    window.location.replace("UserPage/User_Page.html");
                 }  
                 else{
                     user.css("border-color","red");
@@ -235,7 +235,7 @@ CheckUser = function(){
             console.log(response);
             if(response.length > 0){
                 if(response === 'true')
-                    window.location.replace("User_Page.html");
+                    window.location.replace("UserPage/User_Page.html");
             }
         },
         error: function(response){

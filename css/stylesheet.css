@@ -1,5 +1,5 @@
 .main_block {
-  background-image: url("image/login_bg_dark.png");
+  background-image: url("../image/login_bg_dark.png");
   width: 100vw;
   height: 1000px;
   padding: 20px;
@@ -84,7 +84,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 5;
-  background-image: url("image/movie5.jpg");
+  background-image: url("../image/movie5.jpg");
 }
 
 .poster2 {
@@ -96,7 +96,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 4;
-  background-image: url("image/movie4.jpg");
+  background-image: url("../image/movie4.jpg");
 }
 
 .poster3 {
@@ -108,7 +108,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 3;
-  background-image: url("image/movie3.jpg");
+  background-image: url("../image/movie3.jpg");
 }
 
 .poster4 {
@@ -120,7 +120,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 2;
-  background-image: url("image/movie2.jpg");
+  background-image: url("../image/movie2.jpg");
 }
 
 .poster5 {
@@ -132,7 +132,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 1;
-  background-image: url("image/movie1.jpeg");
+  background-image: url("../image/movie1.jpeg");
 }
 
 .info_text {
@@ -195,7 +195,7 @@ a {
 .logo_text {
   width: 380px;
   height: 200px;
-  background-image: url(image/logo.png);
+  background-image: url(../image/logo.png);
   background-size: cover;
   margin: 0 auto;
 }
@@ -205,7 +205,7 @@ a {
   position: absolute;
   right: 50px;
   bottom: 100px;
-  background-image: url(image/logo_under.png);
+  background-image: url(../image/logo_under.png);
   background-size: cover;
 }
 
@@ -265,7 +265,7 @@ a {
     height:     100%;
     width:      100%;
     background: rgba(0, 0, 0, 0.5)
-                url('image/loading.gif') 
+                url('../image/loading.gif') 
                 50% 50% 
                 no-repeat;
 }
