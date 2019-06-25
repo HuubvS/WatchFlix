@@ -1,6 +1,6 @@
 <?php
-include 'cookie_manager.php';
-include 'db_connection.php';
+include '../cookie_manager.php';
+include '../db_connection.php';
 
 if(isset($_POST['checkUsers']))
 {
