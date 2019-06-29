@@ -11,28 +11,29 @@ if(isset($_POST['checkUsers']))
             if(strpos($userGroupId, 'User not exist') !== true){
                 $conn = OpenCon();
     
-                $call = $conn->prepare('CALL GetUsersByGroupId(?, @userName, @age, @userId)');
+                $call = $conn->prepare('CALL GetUsersByGroupId2(?)');
                 $call->bind_param('i', $userGroupId);
                 $call->execute();
-                
-                $select = $conn->query('SELECT @userName, @age, @userId') ;
-
-                if($select->num_rows == 0){
+                // $call->bind_result($userId, $userName, $age);
+                //$select = $conn->query('SELECT @userName, @age, @userId') ;
+                $result = $call->get_result();
+                if($result->num_rows === 0){
                     echo 0;
                     CloseCon($conn);
                     return;
                 }
 
                 $array = array();
-                while($result = $select->fetch_assoc()){
+                while($row = $result->fetch_assoc()){
                     $user = new stdClass();
-                    $user -> userId = $result['@userId'];
-                    $user -> userName = $result['@userName'];
-                    $user -> age = $result['@age'];
-
+                    $user -> userId = $row['Id'];
+                    $user -> userName = $row['Username'];
+                    $user -> age = $row['Age'];
+                    
                     $array[] = $user;
                 }
                 echo json_encode($array);
+                $call->close();
                 CloseCon($conn);
             } else {
 
