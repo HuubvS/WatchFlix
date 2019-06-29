@@ -21,9 +21,37 @@ $(document).ready(function(){
 
     var users = new Array();
 
+    GetUserPictUrl = function () {
+        var random = Math.floor(Math.random() * Math.floor(5));
+        var result = "";
+        switch(random) {
+            case 0:
+                result = '../image/user_icon1.jpg';
+                break;
+            case 1:
+                result = '../image/user_icon2.jpg';
+                break;
+            case 2:
+                result = '../image/user_icon3.jpg';
+                break;
+            case 3:
+                result = '../image/user_icon4.jpg';
+                break;
+            case 4:
+                result = '../image/user_icon5.jpg';
+                break;
+            default:
+                break;
+        }
+        return result;
+    }
+
     SetUser = function(user, name, data){
+
         user.css("background-color","transparent");
-        user.css("background-image","url('../image/dolby.png')");
+        user.css("background-image","url(" + GetUserPictUrl() + ")");
+        user.css("background-size","cover");
+        user.css("background-repeat","no-repeat");
         name.html(data.userName);
     }
 
@@ -36,28 +64,29 @@ $(document).ready(function(){
             },
             success: function(response)
             {
-                console.log(response);
-                users = JSON.parse(response);
-                
-                var userTotal = users.length;
-                switch(userTotal) {
-                    case 5:
-                      SetUser(UserE, NameE, users[4]);
-                      userEExist = true;
-                    case 4:
-                      SetUser(UserD, NameD, users[3]);
-                      userDExist = true;
-                    case 3:
-                      SetUser(UserC, NameC, users[2]);
-                      userCExist = true;
-                    case 2:
-                      SetUser(UserB, NameB, users[1]);
-                      userBExist = true;
-                    case 1:
-                      SetUser(UserA, NameA, users[0]);
-                      userAExist = true;
-                    default:
-                      break;
+                if(response != 0){
+                    users = JSON.parse(response);
+                    
+                    var userTotal = users.length;
+                    switch(userTotal) {
+                        case 5:
+                        SetUser(UserE, NameE, users[4]);
+                        userEExist = true;
+                        case 4:
+                        SetUser(UserD, NameD, users[3]);
+                        userDExist = true;
+                        case 3:
+                        SetUser(UserC, NameC, users[2]);
+                        userCExist = true;
+                        case 2:
+                        SetUser(UserB, NameB, users[1]);
+                        userBExist = true;
+                        case 1:
+                        SetUser(UserA, NameA, users[0]);
+                        userAExist = true;
+                        default:
+                        break;
+                    }
                 }
 
                 body.removeClass("loading");
