@@ -32,8 +32,6 @@
   border-radius: 100%;
   margin-left: auto;
   margin-right: auto;
-  border-style: solid;
-  border-color: transparent;
 }
 
 .User_A {
@@ -57,7 +55,10 @@
 }
 
 .User-hover {
+  border-style: solid;
   border-color: rgba(38, 198, 247, 0.87);
+  width: 84px !important;
+  height: 84px !important;
 }
 
 .Add-user {

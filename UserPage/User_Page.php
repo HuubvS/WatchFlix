@@ -11,11 +11,9 @@ if(isset($_POST['checkUsers']))
             if(strpos($userGroupId, 'User not exist') !== true){
                 $conn = OpenCon();
     
-                $call = $conn->prepare('CALL GetUsersByGroupId2(?)');
+                $call = $conn->prepare('CALL GetUsersByGroupId(?)');
                 $call->bind_param('i', $userGroupId);
                 $call->execute();
-                // $call->bind_result($userId, $userName, $age);
-                //$select = $conn->query('SELECT @userName, @age, @userId') ;
                 $result = $call->get_result();
                 if($result->num_rows === 0){
                     echo 0;
