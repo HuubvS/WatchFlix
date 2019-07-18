@@ -26,40 +26,36 @@ body {
   background-color: darkred;
   height: 60%;
   width: 100%;
-  margin-top: 70%;
+  margin-top: 99%;
 }
 
 .Basic_information {
   background-color: whitesmoke;
-  height: 7%;
+  height: 8%;
   width: 75%;
-  border-radius: 32%;
   margin-left: 10%;
 }
 
 .Plan_Selection {
   background-color: lightgoldenrodyellow;
-  height: 7%;
+  height: 8%;
   width: 75%;
-  border-radius: 32%;
   margin-left: 10%;
   margin-top: 5%;
 }
 
 .Members_Selection {
   background-color: gold;
-  height: 7%;
+  height: 8%;
   width: 75%;
-  border-radius: 32%;
   margin-left: 10%;
   margin-top: 5%;
 }
 
 .Payment_Information {
   background-color: black;
-  height: 7%;
+  height: 8%;
   width: 75%;
-  border-radius: 32%;
   margin-left: 10%;
   margin-top: 5%;
 }
