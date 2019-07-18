@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+}
+
+.bodyPage {
+  background-color: yellow;
+  height: 1200px;
+}
+
+.left_side {
+  background-color: lightgreen;
+  height: 100%;
+  width: 30%;
+  float: left;
+}
+
+.left_uppersectionLogo {
+  background-color: lightblue;
+  height: 8%;
+  width: 100%;
+  float: left;
+  margin-top: 40%;
+}
+
+.left_bottomsection {
+  background-color: darkred;
+  height: 60%;
+  width: 100%;
+  margin-top: 70%;
+}
+
+.Basic_information {
+  background-color: whitesmoke;
+  height: 7%;
+  width: 75%;
+  border-radius: 32%;
+  margin-left: 10%;
+}
+
+.Plan_Selection {
+  background-color: lightgoldenrodyellow;
+  height: 7%;
+  width: 75%;
+  border-radius: 32%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.Members_Selection {
+  background-color: gold;
+  height: 7%;
+  width: 75%;
+  border-radius: 32%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.Payment_Information {
+  background-color: black;
+  height: 7%;
+  width: 75%;
+  border-radius: 32%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.right_side {
+  background-color: gray;
+  height: 100%;
+  width: 70%;
+  float: left;
+}
+
+.header_name {
+  background-color: orange;
+  height: 5%;
+  width: 100%;
+  float: right;
+  margin-top: 5%;
+}
+
+.right_middle_sectionUp {
+  background-color: yellow;
+  height: 30%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 17%;
+}
+
+.singlePlan {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+}
+
+#name_single {
+  background-color: blue;
+  height: 20%;
+  width: 100%;
+}
+
+#bulletPoints {
+  background-color: white;
+  height: 50%;
+  width: 100%;
+}
+
+.right_middle_sectionDown {
+  background-color: darkred;
+  height: 15%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.familyPlan {
+  background-color: darkgoldenrod;
+  height: 20%;
+  width: 100%;
+}
+
+.right_bottom_section {
+  background-color: black;
+  height: 6%;
+  width: 37%;
+  margin-top: 5%;
+  float: right;
+}
+
+.button_next {
+  background-color: white;
+  height: 70%;
+  width: 100%;
+}
