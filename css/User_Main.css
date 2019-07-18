@@ -1,0 +1,125 @@
+.main_block {
+  background-image: url("../image/login_bg_dark.png");
+  width: 100vw;
+  height: 1000px;
+  padding: 20px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo_text {
+  width: 370px;
+  height: 215px;
+  background-image: url(../image/logo.png);
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.login_container {
+  text-align: center;
+  height: 150px;
+  margin-top: 45px;
+}
+
+.User {
+  display: inline-block;
+  margin: 5px;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.User_A {
+  background-color: rgba(230, 10, 120, 0.425);
+}
+
+.User_B {
+  background-color: brown;
+}
+
+.User_C {
+  background-color: white;
+}
+
+.User_D {
+  background-color: pink;
+}
+
+.User_E {
+  background-color: aqua;
+}
+
+.User-hover {
+  border-style: solid;
+  border-color: rgba(38, 198, 247, 0.87);
+  width: 84px !important;
+  height: 84px !important;
+}
+
+.Add-user {
+  background-image: url('../image/PlusMath_52px.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Name {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 0.5em;
+  font-size: 15pt;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+}
+
+.replace_this {
+  background-color: red;
+}
+
+.kidsflix_container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.kidflix-text {
+  font-size: 15pt;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+}
+
+.group {
+  display: inline-block;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.modal {
+  display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba(0, 0, 0, 0.5)
+                url('../image/loading.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+body.loading .modal {
+  display: block;
+}
