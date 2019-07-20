@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="div.css" />
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/Main_Page.js"></script>
     <title>WatchFlix - Watch and Stream 4k, Everywhere</title>
   </head>
   <body>
     <div class="bodyPage">
       <div class="navbar">
         <div class="nav_left">
-          <div class="navLogo"><img src="../image/logo_fit.png" id="logo"></div>
+          <div class="navLogo"><img src="image/logo_fit.png" id="logo"></div>
         </div>
         <div class="nav_right">
           <div class="movies"><span id="movies">Movies</span></div>
           <div class="series"><span id="series">Series</span></div>
           <div class="TVshow"><span id="tvshow">TV Show</span></div>
-          <div class="imageLogo"><div id="imageLogo"></div><div id="imageLogoText">Emanuel</div></div>
+          <div class="imageLogo">
+            <div id="imageLogo"></div>
+            <div id="imageLogoText">Emanuel</div>
+          </div>
         </div>
       </div>
       <div class="uppersection">
-        <div class="left_uppersection">
+        <div class="left_uppersection imageTransition">
           <div id="decription_box">
               <div id="text"><div id="movie_title">Avengers: Infinity War</div>Tony stark faces his biggest enemy,
               he met new heroes but some of them
@@ -30,42 +35,76 @@
           </div>
         </div>
         <div class="right_uppersection">
-          <div id="a1"></div>
-          <div id="b1"></div>
-          <div id="c1"></div>
-          <div id="d1"></div>
-          <div id="e1"></div>
-          <div id="f1"></div>
+          <div id="a1" class="imageTransition"></div>
+          <div id="b1" class="imageTransition"></div>
+          <div id="c1" class="imageTransition"></div>
+          <div id="d1" class="imageTransition"></div>
+          <div id="e1" class="imageTransition"></div>
+          <div id="f1" class="imageTransition"></div>
+        </div>
+        <div class="next_uppersection next_button">
+          <img alt="Next" src="image/next_black_64px.png" id="imageNext"/>
+          <img alt="Next" src="image/next_white_64px.png" id="imageNextHover" class="hover_button"/>
         </div>
       </div>
       <div class="middlesection">
         <div class="up_middle_top">
           <div id="text_watched"><span class="scroll_title">Recently streamed</span></div>
-          <div id="a2"></div>
-          <div id="b2"></div>
-          <div id="c2"></div>
-          <div id="d2"></div>
-          <div id="e2"></div>
-          <div id="f2"></div>
-          <div id="g2"></div>
-          <div id="h2"></div>
-          <div id="i2"></div>
-          <div id="j2"></div>
-          <div id="k2"></div>
+          <div class="scroll_poster" id="rs_scroll_poster">
+            <div id="rs_poster_1" class="poster_img"></div>
+            <div id="rs_poster_2" class="poster_img"></div>
+            <div id="rs_poster_3" class="poster_img"></div>
+            <div id="rs_poster_4" class="poster_img"></div>
+            <div id="rs_poster_5" class="poster_img"></div>
+            <div id="rs_poster_6" class="poster_img"></div>
+            <div id="rs_poster_7" class="poster_img"></div>
+            <div id="rs_poster_8" class="poster_img"></div>
+            <div id="rs_poster_9" class="poster_img"></div>
+            <div id="rs_poster_10" class="poster_img"></div>
+            <div id="rs_poster_11" class="poster_img"></div>
+            <div id="rs_poster_12" class="poster_img"></div>
+            <div id="rs_poster_13" class="poster_img"></div>
+            <div id="rs_poster_14" class="poster_img"></div>
+            <div id="rs_poster_15" class="poster_img"></div>
+            <div id="rs_poster_16" class="poster_img"></div>
+            <div id="rs_poster_17" class="poster_img"></div>
+            <div id="rs_poster_18" class="poster_img"></div>
+            <div id="rs_poster_19" class="poster_img"></div>
+            <div id="rs_poster_20" class="poster_img"></div>
+            <div id="rs_poster_21" class="poster_img"></div>
+          </div>
+          <div id="rs_scroll_next">
+            <img alt="Next" src="image/next_black_64px.png" id="rsNext" class="next_button"/>
+            <img alt="Next" src="image/next_white_64px.png" id="rsNextHover" class="next_button hover_button"/>
+          </div>
+          <div id="rs_scroll_prev">
+            <img alt="Next" src="image/prev_black_64px.png" id="rsPrev" class="prev_button"/>
+            <img alt="Next" src="image/prev_white_64px.png" id="rsPrevHover" class="prev_button hover_button"/>
+          </div>
         </div>
         <div class="up_middle_middle">
           <div id="text_genre"><span class="scroll_title">Trending</span></div>
-          <div id="a3"></div>
-          <div id="b3"></div>
-          <div id="c3"></div>
-          <div id="d3"></div>
-          <div id="e3"></div>
-          <div id="f3"></div>
-          <div id="g3"></div>
-          <div id="h3"></div>
-          <div id="i3"></div>
-          <div id="j3"></div>
-          <div id="k3"></div>
+          <div class="scroll_poster" id="trend_scroll_poster">
+            <div id="trend_poster_1" class="poster_img"></div>
+            <div id="trend_poster_2" class="poster_img"></div>
+            <div id="trend_poster_3" class="poster_img"></div>
+            <div id="trend_poster_4" class="poster_img"></div>
+            <div id="trend_poster_5" class="poster_img"></div>
+            <div id="trend_poster_6" class="poster_img"></div>
+            <div id="trend_poster_7" class="poster_img"></div>
+            <div id="trend_poster_8" class="poster_img"></div>
+            <div id="trend_poster_9" class="poster_img"></div>
+            <div id="trend_poster_10" class="poster_img"></div>
+            <div id="trend_poster_11" class="poster_img"></div>
+          </div>
+          <div id="trend_scroll_next">
+            <img alt="Next" src="image/next_black_64px.png" id="trendNext" class="next_button"/>
+            <img alt="Next" src="image/next_white_64px.png" id="trendNextHover" class="next_button hover_button"/>
+          </div>
+          <div id="trend_scroll_prev">
+            <img alt="Prev" src="image/prev_black_64px.png" id="trendPrev" class="prev_button"/>
+            <img alt="Prev" src="image/prev_white_64px.png" id="trendPrevHover" class="prev_button hover_button"/>
+          </div>
         </div>
         <!-- This has not been implemented and might be used,
         if not use delete this code/comment.
@@ -84,4 +123,6 @@
       <div class="footer"></div>
     </div>
   </body>
+  <div class="modal"></div>
+  
 </html>

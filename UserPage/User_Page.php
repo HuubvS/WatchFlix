@@ -40,5 +40,14 @@ if(isset($_POST['checkUsers']))
     }
 };
 
+if(isset($_POST['mainPageUser']))
+{
+    if(isset($_POST['mainPageUserPictUrl']))
+        $result = SetMainPageUser($_POST['mainPageUser'], $_POST['mainPageUserPictUrl']);
+    else
+        $result = SetMainPageUser($_POST['mainPageUser'], "");
+
+    return $result;
+}
 
 ?>

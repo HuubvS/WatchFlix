@@ -20,36 +20,38 @@ $(document).ready(function(){
     $('.User').css("background-color","rgba(226, 227, 227, 0.76)");
 
     var users = new Array();
+    var userPictures = new Array();
 
     GetUserPictUrl = function () {
         var random = Math.floor(Math.random() * Math.floor(5));
         var result = "";
         switch(random) {
             case 0:
-                result = '../image/user_icon1.jpg';
+                result = 'user_icon1.jpg';
                 break;
             case 1:
-                result = '../image/user_icon2.jpg';
+                result = 'user_icon2.jpg';
                 break;
             case 2:
-                result = '../image/user_icon3.jpg';
+                result = 'user_icon3.jpg';
                 break;
             case 3:
-                result = '../image/user_icon4.jpg';
+                result = 'user_icon4.jpg';
                 break;
             case 4:
-                result = '../image/user_icon5.jpg';
+                result = 'user_icon5.jpg';
                 break;
             default:
                 break;
         }
+        userPictures.push(result);
         return result;
     }
 
     SetUser = function(user, name, data){
 
         user.css("background-color","transparent");
-        user.css("background-image","url(" + GetUserPictUrl() + ")");
+        user.css("background-image","url(../image/" + GetUserPictUrl() + ")");
         user.css("background-size","cover");
         user.css("background-repeat","no-repeat");
         name.html(data.userName);
@@ -68,25 +70,27 @@ $(document).ready(function(){
                     users = JSON.parse(response);
                     
                     var userTotal = users.length;
-                    switch(userTotal) {
-                        case 5:
-                        SetUser(UserE, NameE, users[4]);
-                        userEExist = true;
-                        case 4:
-                        SetUser(UserD, NameD, users[3]);
-                        userDExist = true;
-                        case 3:
-                        SetUser(UserC, NameC, users[2]);
-                        userCExist = true;
-                        case 2:
-                        SetUser(UserB, NameB, users[1]);
-                        userBExist = true;
-                        case 1:
-                        SetUser(UserA, NameA, users[0]);
-                        userAExist = true;
-                        default:
-                        break;
+                    var i = 1;
+                    while(i <= userTotal){
+                        if(i == 1){
+                            SetUser(UserA, NameA, users[0]);
+                            userAExist = true;
+                        } else if(i == 2){
+                            SetUser(UserB, NameB, users[1]);
+                            userBExist = true;
+                        } else if(i == 3){
+                            SetUser(UserC, NameC, users[2]);
+                            userCExist = true;
+                        } else if(i == 4){
+                            SetUser(UserD, NameD, users[3]);
+                            userDExist = true;
+                        } else if(i == 5){
+                            SetUser(UserE, NameE, users[4]);
+                            userEExist = true;
+                        }
+                        i++;
                     }
+                    
                 }
 
                 body.removeClass("loading");
@@ -149,5 +153,69 @@ $(document).ready(function(){
     }).mouseleave(function(){
         UserE.removeClass('User-hover');
         UserE.removeClass('Add-user');
+    });
+
+    UserClicked = function(userIndex){
+        body.addClass("loading");
+
+        var mainPageUser = "";
+        var mainPageUserPictUrl = "";
+
+        mainPageUser = users[userIndex].userId;
+        if(userPictures != null && userPictures.length >= userIndex + 1)
+            mainPageUserPictUrl = userPictures[userIndex];
+
+        if(mainPageUser != ""){
+            $.ajax({
+                type: "POST",
+                url: 'User_Page.php',
+                data: {
+                    mainPageUser: mainPageUser,
+                    mainPageUserPictUrl: mainPageUserPictUrl
+                },
+                success: function(response)
+                {
+                    body.removeClass("loading");
+
+                    if(response != 'false'){
+                        window.location.replace("../divs.html");
+                    }
+                },
+                error: function(response){
+                    body.removeClass("loading");
+                    console.log("error!");
+                    console.log(response);
+                }
+            });
+        }
+    }
+
+    UserA.on("click", function(){
+        if(users != null && users.length >= 1)
+            UserClicked(0);
+    });
+
+    UserB.on("click", function(){
+        if(users != null && users.length >= 2)
+            UserClicked(1);
+        
+    });
+
+    UserC.on("click", function(){
+        if(users != null && users.length >= 3)
+            UserClicked(2);
+        
+    });
+
+    UserD.on("click", function(){
+        if(users != null && users.length >= 4)
+            UserClicked(3);
+        
+    });
+
+    UserE.on("click", function(){
+        if(users != null && users.length >= 5)
+            UserClicked(4);
+        
     });
 });
