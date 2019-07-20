@@ -1,7 +1,8 @@
 <?php
 function OpenCon()
 {
-    $dbhost = "localhost";
+    // 127.0.0.1 is faster than localhost
+    $dbhost = "127.0.0.1";
     $dbuser = "huulaca";
     $dbpass = "1212";
     $db = "watchflix";
