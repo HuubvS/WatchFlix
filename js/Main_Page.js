@@ -6,6 +6,47 @@ $(document).ready(function(){
 
     $("#imageLogo").css("background-color","rgba(226, 227, 227, 0.76)");
     $("#imageLogoText").html("");
+
+    CreatePosterDiv = function(scrollPosterId, type, number, pictType, pict){
+        $('#'+scrollPosterId).append('<div id="'+type+'_poster_'+number+'" class="poster_img"></div>');
+        
+        if(pictType == 'local')
+            $('#'+type+'_poster_'+number).css('background-image','url(image/'+pict+')');
+    }
+
+    SetNewPosterImg = function(){
+        $.ajax({
+            type: "POST",
+            url: 'MainPage/Main_Page.php',
+            data: {
+                GetPosters : 'new',
+                Age: user.age
+            },
+            success: function(response)
+            {
+                if(response != 0 && response.length > 0){
+                    var json = JSON.parse(response);
+                    if(json.length > 0){
+                        var i = 1;
+                        json.forEach(x => {
+                            if(x.pictUrl.length > 0)
+                                CreatePosterDiv('new_scroll_poster', 'new', i, 'online', x.pictUrl);
+                            else if(x.pictCover.length > 0)
+                                CreatePosterDiv('new_scroll_poster', 'new', i, 'blob', x.pictCover);
+                            else if(x.pictLocalUrl.length > 0)
+                                CreatePosterDiv('new_scroll_poster', 'new', i, 'local', x.pictLocalUrl);
+                            i++;
+                        });
+                    }
+                }
+            },
+            error: function(response){
+                console.log("error!");
+                console.log(response);
+            }
+       });
+    };
+
     CheckUsers = function(){
         $.ajax({
             type: "POST",
@@ -29,6 +70,8 @@ $(document).ready(function(){
                 }
 
                 body.removeClass("loading");
+                
+                SetNewPosterImg();
             },
             error: function(response){
                 body.removeClass("loading");
@@ -128,6 +171,10 @@ $(document).ready(function(){
     }
     SetTrendPosterImg();
 
+    
+
+    // SetNewPosterImg();
+
     $("#rs_scroll_next").mouseenter(function(){
         $("#rsNext").hide();
         $("#rsNextHover").show();
@@ -178,5 +225,31 @@ $(document).ready(function(){
     $("#trend_scroll_prev").on("click", function(){
         var leftPos = $('#trend_scroll_poster').scrollLeft();
         $('#trend_scroll_poster').animate({scrollLeft: leftPos - 1450}, 1000);
+    });
+
+    $("#new_scroll_next").mouseenter(function(){
+        $("#newNext").hide();
+        $("#newNextHover").show();
+    }).mouseleave(function(){
+        $("#newNext").show();
+        $("#newNextHover").hide();
+    });
+
+    $("#new_scroll_prev").mouseenter(function(){
+        $("#newPrev").hide();
+        $("#newPrevHover").show();
+    }).mouseleave(function(){
+        $("#newPrev").show();
+        $("#newPrevHover").hide();
+    });
+
+    $("#new_scroll_next").on("click", function(){
+        var leftPos = $('#new_scroll_poster').scrollLeft();
+        $('#new_scroll_poster').animate({scrollLeft: leftPos + 1450}, 1000);
+    });
+
+    $("#new_scroll_prev").on("click", function(){
+        var leftPos = $('#new_scroll_poster').scrollLeft();
+        $('#new_scroll_poster').animate({scrollLeft: leftPos - 1450}, 1000);
     });
 });
