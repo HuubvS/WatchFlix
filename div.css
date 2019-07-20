@@ -234,10 +234,6 @@ body{
   height: 45%;
 }
 
-#text_watched {
-  
-  height: 20%;
-}
 .scroll_title{
   display: block;
   width: 150px;
@@ -246,6 +242,7 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12pt;
   margin-left: 20px;
+  margin-bottom: 1%;
 }
 
 .scroll_poster{
@@ -265,13 +262,7 @@ body{
 
 .up_middle_middle {
   position: relative;
-  margin-top: 25px;
   height: 45%;
-}
-
-#text_genre {
-  
-  height: 20%;
 }
 
 .modal {
