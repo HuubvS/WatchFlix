@@ -14,6 +14,73 @@ $(document).ready(function(){
             $('#'+type+'_poster_'+number).css('background-image','url(image/'+pict+')');
     }
 
+    SetRecentPosterImg = function(){
+        $.ajax({
+            type: "POST",
+            url: 'MainPage/Main_Page.php',
+            data: {
+                GetPosters : 'recent',
+                UserId: user.userId,
+                Age: user.age
+            },
+            success: function(response)
+            {
+                if(response != 0 && response.length > 0){
+                    var json = JSON.parse(response);
+                    if(json.length > 0){
+                        var i = 1;
+                        json.forEach(x => {
+                            if(x.pictUrl.length > 0)
+                                CreatePosterDiv('recent_scroll_poster', 'recent', i, 'online', x.pictUrl);
+                            else if(x.pictCover.length > 0)
+                                CreatePosterDiv('recent_scroll_poster', 'recent', i, 'blob', x.pictCover);
+                            else if(x.pictLocalUrl.length > 0)
+                                CreatePosterDiv('recent_scroll_poster', 'recent', i, 'local', x.pictLocalUrl);
+                            i++;
+                        });
+                    }
+                }
+            },
+            error: function(response){
+                console.log("error!");
+                console.log(response);
+            }
+       });
+    };
+
+    SetTrendPosterImg = function(){
+        $.ajax({
+            type: "POST",
+            url: 'MainPage/Main_Page.php',
+            data: {
+                GetPosters : 'trend',
+                Age: user.age
+            },
+            success: function(response)
+            {
+                if(response != 0 && response.length > 0){
+                    var json = JSON.parse(response);
+                    if(json.length > 0){
+                        var i = 1;
+                        json.forEach(x => {
+                            if(x.pictUrl.length > 0)
+                                CreatePosterDiv('trend_scroll_poster', 'trend', i, 'online', x.pictUrl);
+                            else if(x.pictCover.length > 0)
+                                CreatePosterDiv('trend_scroll_poster', 'trend', i, 'blob', x.pictCover);
+                            else if(x.pictLocalUrl.length > 0)
+                                CreatePosterDiv('trend_scroll_poster', 'trend', i, 'local', x.pictLocalUrl);
+                            i++;
+                        });
+                    }
+                }
+            },
+            error: function(response){
+                console.log("error!");
+                console.log(response);
+            }
+       });
+    };
+
     SetNewPosterImg = function(){
         $.ajax({
             type: "POST",
@@ -71,6 +138,8 @@ $(document).ready(function(){
 
                 body.removeClass("loading");
                 
+                SetRecentPosterImg();
+                SetTrendPosterImg();
                 SetNewPosterImg();
             },
             error: function(response){
@@ -151,54 +220,30 @@ $(document).ready(function(){
         imageResult.length = 0;
     });
 
-    SetRSPosterImg = function(){
-        for(i = 1 ; i < 22; i++){
-            if(i > 22)
-                $('#rs_poster_'+i).css('background-image','url(image/poster_scroll_1.jpg)');
-            else
-                $('#rs_poster_'+i).css('background-image','url(image/poster_scroll_' + i + '.jpg)');
-        }
-    }
-    SetRSPosterImg();
-
-    SetTrendPosterImg = function(){
-        for(i = 1 ; i < 12; i++){
-            if(i > 22)
-                $('#trend_poster_'+i).css('background-image','url(image/poster_scroll_1.jpg)');
-            else
-                $('#trend_poster_'+i).css('background-image','url(image/poster_scroll_' + (23 - i) + '.jpg)');
-        }
-    }
-    SetTrendPosterImg();
-
-    
-
-    // SetNewPosterImg();
-
-    $("#rs_scroll_next").mouseenter(function(){
-        $("#rsNext").hide();
-        $("#rsNextHover").show();
+    $("#recent_scroll_next").mouseenter(function(){
+        $("#recentNext").hide();
+        $("#recentNextHover").show();
     }).mouseleave(function(){
-        $("#rsNext").show();
-        $("#rsNextHover").hide();
+        $("#recentNext").show();
+        $("#recentNextHover").hide();
     });
 
-    $("#rs_scroll_prev").mouseenter(function(){
-        $("#rsPrev").hide();
-        $("#rsPrevHover").show();
+    $("#recent_scroll_prev").mouseenter(function(){
+        $("#recentPrev").hide();
+        $("#recentPrevHover").show();
     }).mouseleave(function(){
-        $("#rsPrev").show();
-        $("#rsPrevHover").hide();
+        $("#recentPrev").show();
+        $("#recentPrevHover").hide();
     });
 
-    $("#rs_scroll_next").on("click", function(){
-        var leftPos = $('#rs_scroll_poster').scrollLeft();
-        $('#rs_scroll_poster').animate({scrollLeft: leftPos + 1450}, 1000);
+    $("#recent_scroll_next").on("click", function(){
+        var leftPos = $('#recent_scroll_poster').scrollLeft();
+        $('#recent_scroll_poster').animate({scrollLeft: leftPos + 1450}, 1000);
     });
 
-    $("#rs_scroll_prev").on("click", function(){
-        var leftPos = $('#rs_scroll_poster').scrollLeft();
-        $('#rs_scroll_poster').animate({scrollLeft: leftPos - 1450}, 1000);
+    $("#recent_scroll_prev").on("click", function(){
+        var leftPos = $('#recent_scroll_poster').scrollLeft();
+        $('#recent_scroll_poster').animate({scrollLeft: leftPos - 1450}, 1000);
     });
 
     $("#trend_scroll_next").mouseenter(function(){
