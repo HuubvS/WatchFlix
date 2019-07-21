@@ -249,6 +249,7 @@ body{
   height: 70%;
   width: 100%;
   overflow-x: auto;
+  overflow-y:hidden;
   white-space: nowrap;
 }
 
@@ -256,7 +257,7 @@ body{
   display: inline-block;
   height: 100%;
   width: 8%;
-  margin-left: 20px;
+  margin-left: 2%;
   background-size: cover;
 }
 

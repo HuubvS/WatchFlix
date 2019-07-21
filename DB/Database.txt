@@ -1,0 +1,3 @@
+DB name: watchflix
+User: huulaca
+Password: 1212

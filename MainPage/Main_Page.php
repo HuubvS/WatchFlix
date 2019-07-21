@@ -46,6 +46,9 @@ if(isset($_POST['GetPosters']) && isset($_POST['Age'])){
         $resource = '';
         if($_POST['GetPosters'] === 'new')
             $resource = 'CALL GetNewMovieList(?)';
+        else if($_POST['GetPosters'] === 'trend')
+            $resource = 'CALL GetTrendMovieList(?)';
+
         if(!empty($resource)){
             $conn = OpenCon();
             $call = $conn->prepare($resource);
@@ -85,6 +88,46 @@ if(isset($_POST['GetPosters']) && isset($_POST['Age'])){
             $call->close();
             CloseCon($conn);
         }
+    } else if ($_POST['GetPosters'] === 'recent' && isset($_POST['UserId'])){
+        $resource = 'CALL GetRecentMovieList(?,?)';
+
+        $conn = OpenCon();
+        $call = $conn->prepare($resource);
+        $call->bind_param('ii', $_POST['UserId'], $_POST['Age']);
+        $call->execute();
+        $result = $call->get_result();
+        if($result->num_rows === 0){
+            echo 0;
+            CloseCon($conn);
+            return;
+        }
+
+        $movieList = array();
+        while($row = $result->fetch_assoc()){
+            $movie = new stdClass();
+
+            $movie -> movieId = $row['MovieId'];
+            $movie -> movieName = $row['Name'];
+            if(!empty($row['Picture_Url']))
+                $movie -> pictUrl = $row['Picture_Url'];
+            else
+                $movie -> pictUrl = '';
+
+            if(!empty($row['Picture_Local_Url']))
+                $movie -> pictLocalUrl = $row['Picture_Local_Url'];
+            else
+                $movie -> pictLocalUrl = '';
+                
+            if(!empty($row['Picture_Cover']) && $row['Picture_Cover'] != "''")
+                $movie -> pictCover = $row['Picture_Cover'];
+            else
+                $movie -> pictCover = '';
+            
+            $movieList[] = $movie;
+        }
+        echo json_encode($movieList);
+        $call->close();
+        CloseCon($conn);
     }
 }
 
