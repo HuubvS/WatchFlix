@@ -7,7 +7,7 @@ body{
 }
 
 .bodyPage {
-  background-image: url("../image/main_bg_dark.png");
+  background-image: url("image/main_bg_dark.png");
   height: 1200px;
   background-attachment: fixed;
 }
@@ -83,7 +83,6 @@ body{
 }
 
 #imageLogo{
-  background-image: url("../image/prof_pic.jpg");
   background-size: cover;
   width: 45px;
   height: 45px;
@@ -104,10 +103,18 @@ body{
 .uppersection {
   background-color: skyblue;
   height: 35%;
+  position: relative;
+}
+
+.imageTransition{
+  -webkit-transition: background-image 2000ms ease-in-out;
+  transition: background-image 2000ms ease-in-out;
+  -moz-transition: background-image 2000ms ease-in-out;
+  -o-transition: background-image 2000ms ease-in-out;
 }
 
 .left_uppersection {
-  background-image: url("../image/movie_preview_main.png");
+  background-image: url("image/movie_preview_main.png");
   background-size: cover;
   height: 100%;
   width: 60%;
@@ -169,7 +176,7 @@ body{
 }
 
 #a1 {
-  background-image: url("../image/movie_preview_1.png");
+  background-image: url("image/movie_preview_1.png");
   background-size: cover;
   height: 35%;
   width: 35%;
@@ -177,7 +184,7 @@ body{
 }
 
 #b1 {
-  background-image: url("../image/movie_preview_2.png");
+  background-image: url("image/movie_preview_2.png");
   background-size: cover;
   height: 35%;
   width: 65%;
@@ -185,7 +192,7 @@ body{
 }
 
 #c1 {
-  background-image: url("../image/movie_preview_3.png");
+  background-image: url("image/movie_preview_3.png");
   background-size: cover;
   height: 35%;
   width: 60%;
@@ -193,7 +200,7 @@ body{
 }
 
 #d1 {
-  background-image: url("../image/movie_preview_4.png");
+  background-image: url("image/movie_preview_4.png");
   background-size: cover;
   height: 35%;
   width: 40%;
@@ -201,7 +208,7 @@ body{
 }
 
 #e1 {
-  background-image: url("../image/movie_preview_5.png");
+  background-image: url("image/movie_preview_5.png");
   background-size: cover;
   height: 30%;
   width: 50%;
@@ -209,7 +216,7 @@ body{
 }
 
 #f1 {
-  background-image: url("../image/movie_preview_6.png");
+  background-image: url("image/movie_preview_6.png");
   background-size: cover;
   height: 30%;
   width: 50%;
@@ -223,14 +230,10 @@ body{
 }
 
 .up_middle_top {
-  
+  position: relative;
   height: 45%;
 }
 
-#text_watched {
-  
-  height: 20%;
-}
 .scroll_title{
   display: block;
   width: 150px;
@@ -239,143 +242,68 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12pt;
   margin-left: 20px;
+  margin-bottom: 1%;
 }
 
-#a2, #b2, #c2, #d2, #e2, #f2, #g2, #h2, #i2, #j2, #a3, #b3, #c3, #d3, #e3, #f3, #g3, #h3, #i3, #j3 {
-  
+.scroll_poster{
   height: 70%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y:hidden;
+  white-space: nowrap;
+}
+
+.poster_img{
+  display: inline-block;
+  height: 100%;
   width: 8%;
-  float: left;
-  margin-left: 20px;
-}
-
-#a2{
-  background-image: url("../image/poster_scroll_1.jpg");
-  background-size: cover;
-}
-
-#k2{
-  background-image: url("../image/poster_scroll_11.jpg");
-  background-size: cover;
-  height: 70%;
-  width: 50px;
-  float: left;
-  margin-left: 20px;
-}
-
-#b2 {
-  background-image: url("../image/poster_scroll_2.jpg");
-  background-size: cover;
-}
-
-#c2 {
-  background-image: url("../image/poster_scroll_3.jpg");
-  background-size: cover;
-}
-
-#d2 {
-  background-image: url("../image/poster_scroll_4.jpg");
-  background-size: cover;
-}
-
-#e2 {
-  background-image: url("../image/poster_scroll_5.jpg");
-  background-size: cover;
-}
-
-#f2 {
-  background-image: url("../image/poster_scroll_6.jpg");
-  background-size: cover;
-}
-
-#g2 {
-  background-image: url("../image/poster_scroll_7.jpg");
-  background-size: cover;
-}
-
-#h2 {
-  background-image: url("../image/poster_scroll_8.jpg");
-  background-size: cover;
-}
-
-#i2 {
-  background-image: url("../image/poster_scroll_9.jpg");
-  background-size: cover;
-}
-
-#j2 {
-  background-image: url("../image/poster_scroll_10.jpg");
-  background-size: cover;
-}
-
-#a3{
-  background-image: url("../image/poster_scroll_12.jpg");
-  background-size: cover;
-}
-
-#k3{
-  background-image: url("../image/poster_scroll_13.jpg");
-  background-size: cover;
-  height: 70%;
-  width: 50px;
-  float: left;
-  margin-left: 20px;
-}
-
-#b3 {
-  background-image: url("../image/poster_scroll_14.jpg");
-  background-size: cover;
-}
-
-#c3 {
-  background-image: url("../image/poster_scroll_15.jpg");
-  background-size: cover;
-}
-
-#d3 {
-  background-image: url("../image/poster_scroll_16.jpg");
-  background-size: cover;
-}
-
-#e3 {
-  background-image: url("../image/poster_scroll_17.jpg");
-  background-size: cover;
-}
-
-#f3 {
-  background-image: url("../image/poster_scroll_18.jpg");
-  background-size: cover;
-}
-
-#g3 {
-  background-image: url("../image/poster_scroll_19.jpg");
-  background-size: cover;
-}
-
-#h3 {
-  background-image: url("../image/poster_scroll_20.jpg");
-  background-size: cover;
-}
-
-#i3 {
-  background-image: url("../image/poster_scroll_21.jpg");
-  background-size: cover;
-}
-
-#j3 {
-  background-image: url("../image/poster_scroll_22.jpg");
+  margin-left: 2%;
   background-size: cover;
 }
 
 .up_middle_middle {
-  
-  margin-top: 25px;
+  position: relative;
   height: 45%;
 }
 
-#text_genre {
-  
-  height: 20%;
+.modal {
+  display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba(0, 0, 0, 0.5)
+                url('image/loading.gif') 
+                50% 50% 
+                no-repeat;
 }
 
+body.loading {
+  overflow: hidden;
+}
 
+body.loading .modal {
+  display: block;
+}
+
+.next_button{
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev_button{
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hover_button{
+  display: none;
+}
